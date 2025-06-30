@@ -105,4 +105,4 @@ book2_cost = book1_cost + 2
 book3_cost = (book1_cost + book2_cost) / 2
 total_cost = book1_cost + book2_cost + book3_cost
 
-print(f'To buy all 3 books you should pay {total_cost:.2f} UAH.\n')
+print(f'To buy all 3 books you should pay {total_cost} UAH.\n')
