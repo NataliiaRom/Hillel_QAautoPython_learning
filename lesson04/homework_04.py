@@ -70,7 +70,7 @@ tom_1 = adwentures_of_tom_sawer.lower().find("tom")
 tom_count = adwentures_of_tom_sawer.lower().count("tom")
 if tom_count > 1:
     start_index = tom_1 + 1
-    tom_2 = adwentures_of_tom_sawer.lower().find("tom", 2)
+    tom_2 = adwentures_of_tom_sawer.lower().find("tom", start_index)
 
 print(tom_2)
 
@@ -96,9 +96,17 @@ print(sent_4)
 """
 print("TASK 09", end='\n######\n')
 phrase = "By the time"
+count = 0
 for i in adwentures_of_tom_sawer_sentences:
     if i.startswith(phrase):
-        print(f"there is a sentence, that begins from \"{phrase}\"")
+        count +=1
+if count ==1:
+    print(f"there is {count} sentence, that begins from \"{phrase}\" found")
+elif count >1:
+    print(f"there are {count} sentences, that begin from \"{phrase}\" found")
+else:
+    print(f"there are no sentences, that begin from \"{phrase}\" found")
+
 # task 10
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
 """
