@@ -21,17 +21,22 @@ people_records = [
   ('Ava', 'White', 42, 'Journalist', 'San Diego'),
   ('Ethan', 'Anderson', 36, 'Product Manager', 'Phoenix')
 ]
+def print_list():
+    for tup in people_records:
+        print(tup)
+
 
 print('Task 1\n' + "#"*8+ '\n')
 
 new_record = ('Nataliia','Romaniuk',36, 'QA Automation Engineer', 'Kyiv')
 people_records.insert(0,new_record)
-print(people_records)
-
+print_list()
+##############################
 print('Task 2\n' + "#"*8+ '\n')
 
 people_records[1], people_records[5] = people_records[5], people_records[1]
-print(people_records)
+print_list()
+###############################
 
 print('Task 3\n' + "#"*8+ '\n')
 
