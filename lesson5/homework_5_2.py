@@ -22,8 +22,8 @@ people_records = [
   ('Ethan', 'Anderson', 36, 'Product Manager', 'Phoenix')
 ]
 def print_list():
-    for tup in people_records:
-        print(tup)
+    for a, *b, c in people_records:
+        print(a, *b, c)
 
 
 print('Task 1\n' + "#"*8+ '\n')
