@@ -19,11 +19,3 @@ for j in symbols_count:
 if not found:
     print(False)
 
-# symbols_count_string = ",".join(symbols_count)
-# print(symbols_count)
-# print(symbols_count_string)
-
-
-
-# print(check_value in symbols_count)
-
