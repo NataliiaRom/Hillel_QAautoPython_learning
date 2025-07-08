@@ -1,7 +1,7 @@
 user_string = ""
 check_letter = 'h'
 
-while check_letter.lower() not in user_string.lower():
+while check_letter and check_letter.swapcase() not in user_string:
 
     user_string = input("Enter a string/word, that include letter 'h' or 'H': ")
 
