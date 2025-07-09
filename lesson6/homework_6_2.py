@@ -5,7 +5,7 @@ while check_letter.lower() not in user_string.lower():
 
     user_string = input("Enter a string/word, that include letter 'h' or 'H': ")
 
-    if check_letter in user_string:
+    if check_letter.lower() in user_string.lower():
         print(f"Correct! There is '{check_letter}' or '{check_letter.swapcase()}' in s a string")
     else:
         print(f"Your string does not include '{check_letter}' or '{check_letter.swapcase()}'")
