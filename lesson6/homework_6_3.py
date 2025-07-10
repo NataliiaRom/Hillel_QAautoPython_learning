@@ -8,8 +8,8 @@ for i in lst1:
         string_list.append(i)
 
 ##### Version with .__name__ #######
-    if type(i).__name__ == 'str':
-        string_list.append(i)
+    # if type(i).__name__ == 'str':
+    #     string_list.append(i)
     else:
         continue
 
