@@ -4,12 +4,16 @@ string_list = []
 for i in lst1:
 
 ##### Version with isinstance() #######
-    if isinstance(i, str):
-        string_list.append(i)
+    # if isinstance(i, str):
+    #     string_list.append(i)
 
 ##### Version with .__name__ #######
     # if type(i).__name__ == 'str':
     #     string_list.append(i)
+
+##### Simplest version #######
+    if type(i) == str:
+        string_list.append(i)
     else:
         continue
 
