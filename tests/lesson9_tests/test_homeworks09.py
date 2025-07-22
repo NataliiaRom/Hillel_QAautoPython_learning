@@ -2,13 +2,15 @@ import unittest
 import sys
 import pathlib
 
-from lesson9.homeworks import top_3_symbols
-
 sys.path.insert(0,str(pathlib.Path(__file__).parent.parent.parent))
 
-print("#####Tests for TASK1#####")
 from lesson9.homeworks import top_3_symbols
+from lesson9.homeworks import combined_dict
+from lesson9.homeworks import top_3_list_of_numbs_met
+from lesson9.homeworks import fixed_length_list
+from lesson9.homeworks import tuple_of_unique_values
 
+print("#####Tests for TASK1#####")
 class Task1Tests(unittest.TestCase):
     def test_output_contains_3_lines(self):
         actual_len = len(top_3_symbols("ab"))
@@ -22,8 +24,6 @@ class Task1Tests(unittest.TestCase):
         print("Test passed: Input contains not empty text")
 
 print("#####Tests for TASK2#####")
-from lesson9.homeworks import combined_dict
-
 class Task2Tests(unittest.TestCase):
     def test_both_arguments_are_dictionaries(self):
         dict1 = {
@@ -70,8 +70,6 @@ class Task2Tests(unittest.TestCase):
 
 
 print("#####Tests for TASK3#####")
-from lesson9.homeworks import top_3_list_of_numbs_met
-
 class Task3Tests(unittest.TestCase):
     def test_check_is_number_is_met_more_than_once(self):
         list_of_numbs = [12, 34, -67]#, 356, -678, 100, -678, 12, 356, -678, 0, 67, 100, 32, 34, 100, -678]
@@ -99,8 +97,6 @@ class Task3Tests(unittest.TestCase):
                              msg = f"'{t}' is mutable. The test cannot be performed")
 
 print("#####Tests for TASK4#####")
-from lesson9.homeworks import fixed_length_list
-
 class Task4Tests(unittest.TestCase):
     def test_check_there_are_dashes_in_output(self):
         # list0 = ["abcde", "abcdefgh1234", "abcdef", "abcdefghtyui", "123"]
@@ -117,7 +113,7 @@ class Task4Tests(unittest.TestCase):
 
 
 print("#####Tests for TASK5#####")
-from lesson9.homeworks import tuple_of_unique_values
+
 
 class Task5Tests(unittest.TestCase):
     def test_tuple_has_more_than_one_element(self):
