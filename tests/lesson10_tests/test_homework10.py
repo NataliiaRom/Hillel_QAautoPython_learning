@@ -49,10 +49,18 @@ def test_ValueError_is_raised_if_output_list_elements_of_same_size():
 
 print("#####Tests for TASK5#####")
 
-def test_1st_elt_less_than50_and_last_elt_bigger_than15():
-    list5 = [12, 45, 67, 56, 45, 23, 98, 12, 67]
-    final_list = tuple_of_unique_values(list5)
-    assert final_list[0] <=50 and final_list[-1]>=15, \
-        f"The border values '{final_list[0]}' and '{final_list[-1]}' are not appropriate to proceed.]"
+class TestTask5:
+    def test_1st_elt_less_than50_and_last_elt_bigger_than15(self):
+        list5 = [12, 45, 67, 56, 45, 23, 98, 12, 67]
+        final_list = tuple_of_unique_values(list5)
+        assert final_list[0] <=50 and final_list[-1]>=15, \
+            f"The border values '{final_list[0]}' and '{final_list[-1]}' are not appropriate to proceed.]"
+
+    def test_output_is_correct(self):
+        list5 = [12, 45, 67, 56, 45, 23, 98, 12, 67]
+        final_tuple = tuple_of_unique_values(list5)
+        expected_result = (67, 12, 98, 23, 45, 56)
+
+        assert final_tuple == expected_result, "The code returns incorrect output"
 
 
