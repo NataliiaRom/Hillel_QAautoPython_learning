@@ -27,30 +27,21 @@ def group_number_search(xml_file,number: int):
     tree = ET.parse(xml_file)
     root = tree.getroot()
 
-    number_found = False
-    for child in root:
-        for subchild in child:
-            if subchild.tag == 'number' and subchild.text == str(number):
-                number_found = True
-                timing_found = False
-                for timex in child:
-                    if timex.tag == 'timingExbytes':
-                        timing_found = True
-                        found_incoming = False
-                        for inc in timex:
-                            if inc.tag == 'incoming':
-                                found_incoming = True
-                                if inc.text:
-                                    logger.info(f"{log_msg} {inc.text}")
-                                else:
-                                    logger.warning(f"There is no text for tag 'incoming' found.")
-                        if not found_incoming:
-                            logger.warning(f"There is no tag 'incoming' found.")
-                if not timing_found:
-                    logger.warning(f"There is no tag 'timingExbytes' found.")
-                return
-    if not number_found:
-        logger.warning(f"There is no child with number {number} found.")
-group_number_search(groups_xml_path, 2)
+    for group in root.findall('group'):
+        numb = group.find("number")
+        if numb is not None and numb.text == str(number):
+            timingExbytes = group.find("timingExbytes")
+            if timingExbytes is not None:
+                incoming = timingExbytes.find("incoming")
+                if incoming is not None:
+                    return logger.info(incoming.text)
+                else:
+                    return logger.warning(f"requested 'incoming' value is not found")
+            else:
+                return logger.warning(f"elt 'timingExbytes' is not found")
+
+    return logger.warning(f"requested elt 'number' is not found")
+
+print(group_number_search(groups_xml_path, 6))
 
 
