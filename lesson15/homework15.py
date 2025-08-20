@@ -19,17 +19,16 @@ class Rhombus:
                 raise TypeError("angle_a value should have INT type")
 
         # rules for angle_B assignment
-        def __setattr__(self, key, value):
-            if key == "angle_b":
-                if isinstance(value, int):
-                    if 0 < value < 180:
-                        print(f"Setting a new value for {key}...")
-                        print(f"Setting a new value for angle_a...\n")
-                        super().__setattr__("angle_a", 180 - value)
-                    else:
-                        raise ValueError("angle_b value should be inside (0 to 180) scope")
+        if key == "angle_b":
+            if isinstance(value, int):
+                if 0 < value < 180:
+                    print(f"Setting a new value for {key}...")
+                    print(f"Setting a new value for angle_a...\n")
+                    super().__setattr__("angle_a", 180 - value)
                 else:
-                    raise TypeError("angle_b value should have INT type")
+                    raise ValueError("angle_b value should be inside (0 to 180) scope")
+            else:
+                raise TypeError("angle_b value should have INT type")
 
         # rules for a_side assignment
         if key == "a_side":
