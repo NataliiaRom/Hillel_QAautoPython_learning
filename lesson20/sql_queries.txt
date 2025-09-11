@@ -1,0 +1,48 @@
+CREATE TABLE public.categories (
+	id int NOT NULL,
+	category varchar NOT NULL,
+	CONSTRAINT categories_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE public.products (
+	id int NOT NULL,
+	name varchar not NULL,
+	description varchar NULL,
+	price numeric not NULL,
+	category_id int NULL,
+	CONSTRAINT products_pk PRIMARY KEY (id),
+	CONSTRAINT products_unique UNIQUE (name),
+	CONSTRAINT fk_category
+        FOREIGN KEY (category_id)
+        REFERENCES public.categories (id)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+INSERT INTO categories  (id,category)
+VALUES
+	(1,'Vegetables'),
+	(2,'Flour products'),
+	(3,'Bee products'),
+	(4, 'Jewellery');
+
+INSERT INTO products (id, name, description,price,category_id)
+VALUES
+	(1,'Tomatoes','from Kherson',30,1),
+	(2,'Bread','homemade',40,2),
+	(3,'Honey','from Carpathians',300,3),
+	(4,'Cucumbers','Regional',50,1),
+	(5,'Wax','from Carpathians',200,3),
+	(6,'Rain Jacket','Columbia',2000);
+
+
+SELECT
+	products.id,
+	products.name,
+	products.description,
+	categories.category,
+	products.price
+FROM products
+JOIN categories ON products.category_id = categories.id;
+
+
