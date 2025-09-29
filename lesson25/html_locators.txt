@@ -1,0 +1,99 @@
+#1 "Sign In" button
+//header//button[text()="Sign In"]   #xpath
+button.header_signin    #css
+
+#2 "Contacts" section
+//header//button[contains(@class,"header-link") and text()="Contacts"]    #xpath
+button.btn.header-link[appscrollto="contactsSection"]   #css
+
+#3 "Do More!" text
+//div/h1[contains(@class,"hero-descriptor_title")]  #xpath
+h1.hero-descriptor_title  #css
+
+#4 Video
+//div[@id="player"]  #xpath
+div.ytp-cued-thumbnail-overlay-image    #css
+
+#5 Play button on a video
+//div[@id="player"]//button[@title="Відтворити"]    #xpath
+button.ytp-large-play-button   #css
+
+#6 "Hillelauto" text in the top left corner
+//div[contains(@class,"header_left")]/a[@class="header_logo"]   #xpath
+a.header_logo   #css
+
+#7 "Fuel Expences" picture
+(//div[contains(@class, 'about-block_picture')]//img)[1]    #xpath
+img.about-picture_img[src="/assets/images/homepage/info_2.jpg"]  #css
+
+#8 Link to Youtube in Contacts section
+//div[@id="contactsSection"]//span[contains(@class,"icon-youtube")]     #xpath
+span.socials_icon.icon.icon-youtube     #css
+
+#9 "Sign In" onclick -> "X" button inside "Log In" form
+//div[@class="modal-content"]//button[@class="close"]   #xpath
+button.close    #css
+
+#10 "ithillel.ua" link at the page bottom
+//div[@id="contactsSection"]//a[text()="ithillel.ua"]       #xpath
+a.contacts_link.display-4       #css
+
+#11 Green Hillel LOGO at the page bottom
+//footer//a[@class="footer_logo"]   #xpath
+a.footer_logo   #css
+
+#12 Email input field in a Login form
+//div[@class="modal-content"]//input[@id="signinEmail"]     #xpath
+#signinEmail        #css
+
+#13 "Guest Log In" onclick -> "Fuel Expenses" section
+//nav[contains(@class,"sidebar")]//a[@routerlink="expenses"]  #xpath
+a[routerlink="expenses"]        #css
+
+#14 "Hillel IT School" logo on a Video
+//div[@id="player"]//a[@class="ytp-title-channel-logo"]     #xpath
+a.ytp-title-channel-logo        #css
+
+#15 "Поділитися" link on a Video
+//div[@id="player"]//button[@aria-label="Поділитися"]       #xpath
+button.ytp-button.ytp-share-button      #css
+
+#16 "Sign Up" button
+//div[@class="hero-descriptor"]//button[text()="Sign up"]   #xpath
+button.hero-descriptor_btn      #css
+
+#17 "Guest log in" button in Header
+//header//button[text()="Guest log in"]     #xpath
+button.header-link.-guest   #css
+
+#18 "Guest Log In" onclick -> "Add Car" button -> "Model" drop-down
+//div[@class="modal-body"]//select[@id="addCarModel"]   #xpath
+#addCarModel        #css
+
+#19 Youtube link on a video
+//div[@id="player"]//a[contains(@class,"ytp-watermark")]   #xpath
+a.ytp-watermark     #css
+
+#20 Video title link
+//div[@id="player"]//a[contains(@class,"ytp-title-link")]  #xpath
+a.ytp-title-link    #css
+
+#21 "Переглянути пізніше" button on a Video
+//div[@id="player"]//button[contains(@class, 'ytp-watch-later-button')] #xpath
+button.ytp-watch-later-button   #css
+
+#22 "Guest Log In" onclick -> "Add Car" button -> "Cancel" button
+//div[contains(@class,"modal-footer")]//button[contains(@class,"btn-secondary")]
+button.btn.btn-secondary    #css
+
+#23 "Guest Log In" onclick -> "My Profile" -> "Logout" button
+//button[contains(@class,"user-nav_link")]  #xpath
+button.dropdown-item        #css
+
+#24 "Guest Log In" onclick -> "My Profile" -> "Instructions" link
+//div[contains(@class,"user-nav")]//a[@href="/panel/instructions"]    #xpath
+a.dropdown-item.btn[href="/panel/instructions"]     #css
+
+#25 "Sign In" onclick -> "Remember me" checkbox inside "Log In" form
+//div[@class="form-check"]//input[@type="checkbox"]     #xpath
+input.form-check-input      #css
