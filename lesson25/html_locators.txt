@@ -23,7 +23,7 @@ button.ytp-large-play-button   #css
 a.header_logo   #css
 
 #7 "Fuel Expences" picture
-//div[@class="about-block_picture about-picture"]/img[@src="/assets/images/homepage/info_1.jpg"]    #xpath
+(//div[contains(@class, 'about-block_picture')]//img)[1]    #xpath
 img.about-picture_img[src="/assets/images/homepage/info_2.jpg"]  #css
 
 #8 Link to Youtube in Contacts section
