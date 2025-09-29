@@ -3,11 +3,11 @@
 button.header_signin    #css
 
 #2 "Contacts" section
-//header//button[@class="btn header-link" and text()="Contacts"]    #xpath
+//header//button[contains(@class,"header-link") and text()="Contacts"]    #xpath
 button.btn.header-link[appscrollto="contactsSection"]   #css
 
 #3 "Do More!" text
-//div/h1[@class="hero-descriptor_title display-2"]  #xpath
+//div/h1[contains(@class,"hero-descriptor_title")]  #xpath
 h1.hero-descriptor_title  #css
 
 #4 Video
@@ -19,7 +19,7 @@ div.ytp-cued-thumbnail-overlay-image    #css
 button.ytp-large-play-button   #css
 
 #6 "Hillelauto" text in the top left corner
-//div[@class="header_left d-flex align-items-center"]/a[@class="header_logo"]   #xpath
+//div[contains(@class,"header_left")]/a[@class="header_logo"]   #xpath
 a.header_logo   #css
 
 #7 "Fuel Expences" picture
@@ -27,7 +27,7 @@ a.header_logo   #css
 img.about-picture_img[src="/assets/images/homepage/info_2.jpg"]  #css
 
 #8 Link to Youtube in Contacts section
-//div[@id="contactsSection"]//span[@class="socials_icon icon icon-youtube"]     #xpath
+//div[@id="contactsSection"]//span[contains(@class,"icon-youtube")]     #xpath
 span.socials_icon.icon.icon-youtube     #css
 
 #9 "Sign In" onclick -> "X" button inside "Log In" form
@@ -47,7 +47,7 @@ a.footer_logo   #css
 #signinEmail        #css
 
 #13 "Guest Log In" onclick -> "Fuel Expenses" section
-//nav[@class="sidebar d-flex flex-column"]//a[@routerlink="expenses"]   #xpath
+//nav[contains(@class,"sidebar")]//a[@routerlink="expenses"]  #xpath
 a[routerlink="expenses"]        #css
 
 #14 "Hillel IT School" logo on a Video
@@ -71,27 +71,27 @@ button.header-link.-guest   #css
 #addCarModel        #css
 
 #19 Youtube link on a video
-//div[@id="player"]//a[@class="ytp-watermark yt-uix-sessionlink"]   #xpath
+//div[@id="player"]//a[contains(@class,"ytp-watermark")]   #xpath
 a.ytp-watermark     #css
 
 #20 Video title link
-//div[@id="player"]//a[@class="ytp-title-link yt-uix-sessionlink"]  #xpath
+//div[@id="player"]//a[contains(@class,"ytp-title-link")]  #xpath
 a.ytp-title-link    #css
 
 #21 "Переглянути пізніше" button on a Video
-//div[@id="player"]//button[@class="ytp-watch-later-button ytp-button ytp-show-watch-later-title"]  #xpath
+//div[@id="player"]//button[contains(@class, 'ytp-watch-later-button')] #xpath
 button.ytp-watch-later-button   #css
 
 #22 "Guest Log In" onclick -> "Add Car" button -> "Cancel" button
-//div[@class="modal-footer d-flex justify-content-end"]//button[@class="btn btn-secondary"]
+//div[contains(@class,"modal-footer")]//button[contains(@class,"btn-secondary")]
 button.btn.btn-secondary    #css
 
 #23 "Guest Log In" onclick -> "My Profile" -> "Logout" button
-//button[@class="dropdown-item btn btn-link user-nav_link"]   #xpath
+//button[contains(@class,"user-nav_link")]  #xpath
 button.dropdown-item        #css
 
 #24 "Guest Log In" onclick -> "My Profile" -> "Instructions" link
-//div[@class="user-nav show dropdown"]//a[@href="/panel/instructions"]    #xpath
+//div[contains(@class,"user-nav")]//a[@href="/panel/instructions"]    #xpath
 a.dropdown-item.btn[href="/panel/instructions"]     #css
 
 #25 "Sign In" onclick -> "Remember me" checkbox inside "Log In" form
