@@ -1,0 +1,23 @@
+# Використовуємо офіційний образ Python версії 3.9
+FROM python:3.13
+
+# Встановлюємо залежності для тестування
+
+RUN pip install pytest
+
+# Копіюємо файли з локальної директорії в контейнер
+COPY ./lesson29/ /app/lesson29
+COPY ./tests/lesson29_tests /app/tests/lesson29_tests
+COPY requirements.txt /app
+
+# Задаємо робочу директорію контейнера
+WORKDIR /app
+
+# Installing required packages
+RUN pip install -r requirements.txt
+
+# Додаємо папку /app в PYTHONPATH для того, щоб Python знаходив модулі
+ENV PYTHONPATH=/app
+
+# Виконуємо команду для запуску тестів під час створення контейнера
+CMD ["pytest", "-v", "tests"]
