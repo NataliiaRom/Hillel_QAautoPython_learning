@@ -1,0 +1,6 @@
+*
+!lesson29/
+!tests/lesson29_tests/
+!requirements.txt
+!Dockerfile
+!docker-compose.yaml

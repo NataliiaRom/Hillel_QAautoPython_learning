@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: hillel_2025
+    ports:
+      - "5432:5432"
+
+  app:
+    build:
+      context: .
+    depends_on:
+      - db
+    environment:
+      PYTHONPATH: /app
+    command: [ "pytest", "-v", "tests" ]
+
