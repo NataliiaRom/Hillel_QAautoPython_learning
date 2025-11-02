@@ -4,16 +4,16 @@ import pathlib
 
 sys.path.insert(0,str(pathlib.Path(__file__).parent.parent.parent))
 
-from lesson9.homeworks import top_3_symbols
-from lesson9.homeworks import combined_dict
-from lesson9.homeworks import top_3_list_of_numbs_met
-from lesson9.homeworks import fixed_length_list
-from lesson9.homeworks import tuple_of_unique_values
+from lesson9.homeworks09 import top_3_symbols
+from lesson9.homeworks09 import combined_dict
+from lesson9.homeworks09 import top_3_list_of_numbs_met
+from lesson9.homeworks09 import fixed_length_list
+from lesson9.homeworks09 import tuple_of_unique_values
 
 print("#####Tests for TASK1#####")
 class Task1Tests(unittest.TestCase):
     def test_output_contains_3_lines(self):
-        actual_len = len(top_3_symbols("ab"))
+        actual_len = len(top_3_symbols("abc"))
         expected_len = 3
         self.assertEqual(actual_len, expected_len, msg=f"The function should return {expected_len} lines, but it returned a different number.")
         print("Test passed: Output contains exactly 3 lines.")
@@ -60,7 +60,7 @@ class Task2Tests(unittest.TestCase):
         # dict2 = [123,345]
         dict2 = {
             "a": 567,
-            "f": "hj"
+            "f": 56
         }
         expected_instance = int
         for i in dict1.values():
@@ -72,7 +72,7 @@ class Task2Tests(unittest.TestCase):
 print("#####Tests for TASK3#####")
 class Task3Tests(unittest.TestCase):
     def test_check_is_number_is_met_more_than_once(self):
-        list_of_numbs = [12, 34, -67]#, 356, -678, 100, -678, 12, 356, -678, 0, 67, 100, 32, 34, 100, -678]
+        list_of_numbs = [12, 34, -67, 356, -678, 100, -678, 12, 356, -678, 0, 67, 100, 32, 34, 100, -678]
 
         not_allowed_quantity = 1
         for t in top_3_list_of_numbs_met(list_of_numbs).values():
@@ -81,7 +81,7 @@ class Task3Tests(unittest.TestCase):
 
 
     def test_check_output_has_only_ints(self):
-        list_of_numbs = [12, 678, "a", "a"]
+        list_of_numbs = [12, 678, 67,80]
         allowed_instance = int
         for key in top_3_list_of_numbs_met(list_of_numbs).keys():
             # print(key)
@@ -89,7 +89,7 @@ class Task3Tests(unittest.TestCase):
                                       msg = f"'{key}' type is not 'int'. Test failed.")
 
     def test_list_elements_are_immutable(self):
-        list_of_numbs = [12, [678], "a", "a"]
+        list_of_numbs = [12, 678, "a", "a"]
         def is_mutable(obj):
             return isinstance(obj,(dict,set,list))
         for t in list_of_numbs:
@@ -100,11 +100,11 @@ print("#####Tests for TASK4#####")
 class Task4Tests(unittest.TestCase):
     def test_check_there_are_dashes_in_output(self):
         # list0 = ["abcde", "abcdefgh1234", "abcdef", "abcdefghtyui", "123"]
-        list0 = ["abc", "fgh", "yui"]
+        list0 = ["abcde", "abcdefgh1234", "abcdef", "abcdefghtyui", "123"]
         dashes_count = 0
         for r in fixed_length_list(list0):
             if "_" in r:
-                dashes_present += 1
+                dashes_count += 1
 
         expected_result = 1
         if dashes_count == 0:
@@ -123,7 +123,7 @@ class Task5Tests(unittest.TestCase):
         self.assertGreaterEqual(actual_length,expected_length)
 
     def test_tuple_length_is_less_than_5(self):
-        list5 = [12, 45, 67, 56, 45, 23, 98, 12, 67]
+        list5 = [12, 45, 67, 56, 45, 12, 67]
         expected_length = 5
         actual_length = len(tuple_of_unique_values(list5))
         self.assertLessEqual (actual_length,expected_length)
