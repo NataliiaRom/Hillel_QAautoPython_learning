@@ -11,7 +11,6 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 sh '''#!/bin/bash
-                set -e
                 apt-get update
                 apt-get install -y python3 python3-dev python3-venv python3-pip
                 rm -rf venv
