@@ -18,6 +18,7 @@ pipeline {
                 source venv/bin/activate
                 pip install --upgrade pip
                 pip install -r requirements.txt
+                apt-get install -y python3 python3-dev
                 '''
             }
         }
@@ -27,7 +28,7 @@ pipeline {
                 sh '''#!/bin/bash
                 set -e
                 source venv/bin/activate
-                pytest --alluredir=allure-results
+                pytest -m jenkins_tests --alluredir=allure-results
                 '''
             }
         }
