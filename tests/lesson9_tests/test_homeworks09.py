@@ -1,6 +1,7 @@
 import unittest
 import sys
 import pathlib
+import pytest
 
 sys.path.insert(0,str(pathlib.Path(__file__).parent.parent.parent))
 
@@ -10,7 +11,9 @@ from lesson9.homeworks09 import top_3_list_of_numbs_met
 from lesson9.homeworks09 import fixed_length_list
 from lesson9.homeworks09 import tuple_of_unique_values
 
+
 print("#####Tests for TASK1#####")
+@pytest.mark.jenkins_tests
 class Task1Tests(unittest.TestCase):
     def test_output_contains_3_lines(self):
         actual_len = len(top_3_symbols("abc"))
@@ -24,6 +27,7 @@ class Task1Tests(unittest.TestCase):
         print("Test passed: Input contains not empty text")
 
 print("#####Tests for TASK2#####")
+@pytest.mark.jenkins_tests
 class Task2Tests(unittest.TestCase):
     def test_both_arguments_are_dictionaries(self):
         dict1 = {
@@ -70,6 +74,7 @@ class Task2Tests(unittest.TestCase):
 
 
 print("#####Tests for TASK3#####")
+@pytest.mark.jenkins_tests
 class Task3Tests(unittest.TestCase):
     def test_check_is_number_is_met_more_than_once(self):
         list_of_numbs = [12, 34, -67, 356, -678, 100, -678, 12, 356, -678, 0, 67, 100, 32, 34, 100, -678]
@@ -97,6 +102,7 @@ class Task3Tests(unittest.TestCase):
                              msg = f"'{t}' is mutable. The test cannot be performed")
 
 print("#####Tests for TASK4#####")
+@pytest.mark.jenkins_tests
 class Task4Tests(unittest.TestCase):
     def test_check_there_are_dashes_in_output(self):
         # list0 = ["abcde", "abcdefgh1234", "abcdef", "abcdefghtyui", "123"]
@@ -114,7 +120,7 @@ class Task4Tests(unittest.TestCase):
 
 print("#####Tests for TASK5#####")
 
-
+@pytest.mark.jenkins_tests
 class Task5Tests(unittest.TestCase):
     def test_tuple_has_more_than_one_element(self):
         list5 = [12,12,13]
