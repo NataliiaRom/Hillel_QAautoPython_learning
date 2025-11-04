@@ -59,7 +59,7 @@ class Task2Tests(unittest.TestCase):
     def test_dictionaries_have_int_values(self):
         dict1 = {
             "o": 56,
-            "a": 678,
+            "a": "678",
         }
         # dict2 = [123,345]
         dict2 = {
@@ -86,7 +86,7 @@ class Task3Tests(unittest.TestCase):
 
 
     def test_check_output_has_only_ints(self):
-        list_of_numbs = [12, 678, 67,80]
+        list_of_numbs = [12, 678, "67",80]
         allowed_instance = int
         for key in top_3_list_of_numbs_met(list_of_numbs).keys():
             # print(key)
